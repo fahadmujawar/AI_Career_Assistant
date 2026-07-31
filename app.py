@@ -1,4 +1,7 @@
+from utils.parser import extract_pdf_text
 import streamlit as st
+import os 
+from utils.resume_parser import parse_resume
 
 st.set_page_config(
     page_title="AI Career Assistant",
@@ -29,7 +32,40 @@ if uploaded_files:
     st.subheader("Uploaded Files")
 
     for file in uploaded_files:
-        st.write(f"• {file.name}")
+         st.write(f"• {file.name}")
+         pdf_text, page_count = extract_pdf_text(file)
+         st.write(f"Pages detected: {page_count}")
+         st.write(f"Characters extracted: {len(pdf_text)}")
+         if "cv_texts" not in st.session_state:
+             st.session_state.cv_texts = {}
+
+         st.session_state.cv_texts[file.name] = pdf_text
+         resume = parse_resume(pdf_text)
+
+         st.write(f"**Name:** {resume['name']}")
+         st.write(f"**Email:** {resume['email']}")
+         st.write(f"**Phone:** {resume['phone']}")
+
+         with st.expander(f"Parsed Sections - {file.name}"):
+             for section_name, lines in resume["sections"].items():
+                 st.markdown(f"**{section_name}**")
+                 st.text("\n".join(lines))
+
+         # Create folder if it doesn't exist
+         os.makedirs("data/extracted", exist_ok=True)
+
+    # Save extracted text to a file
+         with open(
+             f"data/extracted/{file.name}.txt",
+             "w",
+             encoding="utf-8"
+        ) as f:
+              f.write(pdf_text)
+
+         st.caption(f"Characters extracted: {len(pdf_text)}")
+
+         with st.expander(f"Preview - {file.name}"):
+             st.code(pdf_text)
 
 st.divider()
 

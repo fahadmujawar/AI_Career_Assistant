@@ -1,0 +1,61 @@
+FAHAD MUJAWAR 
+Associate Consultant | Client Reporting, Stakeholder Management & Business Analysis 
+Al-Madinah / Al-Jubail, Saudi Arabia  |  +966 542163125  |  fahadmujawar002@gmail.com  | Github  | LinkedIn 
+PROFESSIONAL PROFILE 
+Analytical, detail-oriented professional with experience managing recurring stakeholder reporting, cross-functional data 
+requests, and structured documentation across large-scale datasets (7,500+ records). Skilled at acting as a point of contact 
+between technical outputs and non-technical stakeholders, translating complex information into clear, decision-ready 
+recommendations. Organized, adaptable, and comfortable operating in fast-paced, deadline-driven environments with 
+recurring cycles of follow-up, coordination, and quality control. 
+CORE SKILLS 
+• Stakeholder Communication & Reporting: point of contact for cross-functional/ad-hoc requests, translating data into 
+clear recommendations for non-technical audiences 
+• Documentation & Process Management: audit trails, structured reporting cycles, traceability, and reproducibility 
+across recurring workflows 
+• Analytical & Reporting Tools: Power BI, Advanced Excel (PivotTables, XLOOKUP/VLOOKUP), SQL (SELECT, 
+GROUP BY, WHERE, ORDER BY), Python (Pandas, NumPy) 
+• Quality Control: proactive identification and resolution of data inconsistencies before outputs reach stakeholders 
+• Adaptability & Organization: self-starter, comfortable adjusting to evolving procedures and shifting priorities 
+• English Proficiency: postgraduate study and professional work conducted fully in English (UK-based MSc, training 
+delivery, stakeholder reporting) 
+PROFESSIONAL EXPERIENCE 
+Inclusive Student Experience Consultant — University of Nottingham 
+Oct 2024 – Oct 2025 
+• Acted as the primary point of contact for cross-functional data requests, coordinating with subject matter experts and 
+multiple departments to gather information and deliver structured outputs. 
+• Delivered recurring weekly and monthly reporting to leadership, translating findings from 7,500+ survey responses 
+into clear recommendations for a non-technical audience. 
+• Built and maintained self-serve Power BI dashboards on a weekly refresh cycle, reducing manual follow-up and 
+giving stakeholders continuous visibility into key trends. 
+• Introduced structured validation checks to proactively identify and resolve data inconsistencies before reports reached 
+stakeholders, improving confidence in reported outcomes. 
+• Maintained documentation and audit trails across recurring reporting cycles, ensuring outputs remained accurate, 
+current, and easy to hand over as procedures evolved. 
+Consultant & Trainer — Rooman Technologies 
+Feb 2024 – Sep 2024 
+• Delivered hands-on training and client-facing sessions in Excel-based reporting, SQL, and Python analysis to learners 
+with varied technical backgrounds, adapting delivery style to audience needs. 
+• Designed structured exercises reinforcing end-to-end analysis, from raw data extraction to validated, decision-ready 
+output, used across multiple cohorts. 
+Research & Teaching Assistant — PES University 
+2022 – 2024 
+• Validated datasets and cross-checked analytical outputs against documented procedures, reducing the risk of errors 
+carrying through to final results. 
+• Prepared structured reports at each stage of analysis, maintaining consistency and traceability across repeated 
+reporting cycles. 
+RELEVANT PROJECTS 
+• Customer Segmentation Analysis (SQL): Segmented customers by purchase behavior using filtering, aggregation, 
+and grouping to produce structured, business-ready outputs. 
+• Academic Operations Dashboard: Built and maintained a Power BI dashboard from Excel data sources for ongoing 
+KPI and operational monitoring, reducing manual reporting effort. 
+EDUCATION 
+
+MSc Computer Science with Artificial Intelligence — University of Nottingham (2024–2025) 
+Modules: Data Science, Statistics, Machine Learning, Python Programming 
+B.Tech Electronics & Communication Engineering (High 2:1), Minor in Management — PES University (2020–
+2024) 
+ADDITIONAL INFORMATION 
+• Comfortable in structured, deadline-driven, on-site roles requiring coordination across multiple stakeholders. 
+• Strong written and spoken English; postgraduate study and prior training delivery conducted entirely in English. 
+• Highly organized self-starter with a track record of maintaining accuracy and traceability across recurring processes. 
+
