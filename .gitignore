@@ -12,4 +12,7 @@ outputs/
 
 .idea/
 
+data/extracted/
+data/parsed/
+
 .vscode/

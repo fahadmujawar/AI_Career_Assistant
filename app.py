@@ -2,6 +2,7 @@ from utils.parser import extract_pdf_text
 import streamlit as st
 import os 
 from utils.resume_parser import parse_resume
+from utils.matcher import match_keywords
 
 st.set_page_config(
     page_title="AI Career Assistant",
@@ -89,6 +90,21 @@ if analyse:
         st.warning("Please paste a Job Description.")
 
     else:
-        st.success("Everything looks good!")
+        st.success("Analysis complete!")
 
-        st.write("Analysis module coming next...")
+        for file in uploaded_files:
+            cv_text = st.session_state.cv_texts[file.name]
+            result = match_keywords(cv_text, job_description)
+
+            st.subheader(file.name)
+            st.metric("Keyword Match Score", f"{result['score']}%")
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+                st.write("**Matched Keywords**")
+                st.write(", ".join(result["matched"]) if result["matched"] else "None")
+
+            with col2:
+                st.write("**Missing Keywords**")
+                st.write(", ".join(result["missing"]) if result["missing"] else "None")
