@@ -3,6 +3,8 @@ import streamlit as st
 import os 
 from utils.resume_parser import parse_resume
 from utils.matcher import match_keywords
+from utils.ai_analysis import analyze_cv_against_jd
+
 
 st.set_page_config(
     page_title="AI Career Assistant",
@@ -108,3 +110,39 @@ if analyse:
             with col2:
                 st.write("**Missing Keywords**")
                 st.write(", ".join(result["missing"]) if result["missing"] else "None")
+
+st.divider()
+st.header("3. AI-Powered Analysis (Gemini)")
+
+if uploaded_files:
+    cv_names = [file.name for file in uploaded_files]
+    selected_cv = st.selectbox("Choose a CV to analyze with AI", cv_names)
+
+    run_ai_analysis = st.button("Analyse with AI")
+
+    if run_ai_analysis:
+        if not job_description.strip():
+            st.warning("Please paste a Job Description first.")
+        else:
+            with st.spinner("Analyzing with Gemini..."):
+                cv_text = st.session_state.cv_texts[selected_cv]
+                resume = parse_resume(cv_text)
+                result = analyze_cv_against_jd(resume["sections"], job_description)
+
+            if "error" in result:
+                st.error(result["error"])
+                st.code(result["raw_response"])
+            else:
+                st.metric("AI Match Score", f"{result['match_score']}%")
+
+                st.subheader("Strengths")
+                for item in result["strengths"]:
+                    st.write(f"✅ {item}")
+
+                st.subheader("Gaps")
+                for item in result["gaps"]:
+                    st.write(f"⚠️ {item}")
+
+                st.subheader("Suggestions")
+                for item in result["suggestions"]:
+                    st.write(f"💡 {item}")
