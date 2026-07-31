@@ -23,3 +23,10 @@ def get_gemini_client():
 
     client = genai.Client(api_key=api_key)
     return client
+
+def is_demo_mode():
+    try:
+        import streamlit as st
+        return st.secrets.get("DEMO_MODE", "false").lower() == "true"
+    except Exception:
+        return False
