@@ -4,6 +4,8 @@ import os
 from utils.resume_parser import parse_resume
 from utils.matcher import match_keywords
 from utils.ai_analysis import analyze_cv_against_jd
+from utils.ai_analysis import tailor_cv_to_jd
+
 
 
 st.set_page_config(
@@ -128,21 +130,60 @@ if uploaded_files:
                 cv_text = st.session_state.cv_texts[selected_cv]
                 resume = parse_resume(cv_text)
                 result = analyze_cv_against_jd(resume["sections"], job_description)
+                st.session_state.ai_analysis_result = result
 
-            if "error" in result:
-                st.error(result["error"])
-                st.code(result["raw_response"])
-            else:
-                st.metric("AI Match Score", f"{result['match_score']}%")
+    if "ai_analysis_result" in st.session_state:
+        result = st.session_state.ai_analysis_result
 
-                st.subheader("Strengths")
-                for item in result["strengths"]:
-                    st.write(f"✅ {item}")
+        if "error" in result:
+            st.error(result["error"])
+            st.code(result["raw_response"])
+        else:
+            st.metric("AI Match Score", f"{result['match_score']}%")
 
-                st.subheader("Gaps")
-                for item in result["gaps"]:
-                    st.write(f"⚠️ {item}")
+            st.subheader("Strengths")
+            for item in result["strengths"]:
+                st.write(f"✅ {item}")
 
-                st.subheader("Suggestions")
-                for item in result["suggestions"]:
-                    st.write(f"💡 {item}")
+            st.subheader("Gaps")
+            for item in result["gaps"]:
+                st.write(f"⚠️ {item}")
+
+            st.subheader("Suggestions")
+            for item in result["suggestions"]:
+                st.write(f"💡 {item}")
+
+
+st.divider()
+st.header("4. AI-Powered CV Tailoring (Gemini)")
+
+if uploaded_files:
+    tailor_cv_choice = st.selectbox(
+        "Choose a CV to tailor", cv_names, key="tailor_select"
+    )
+
+    run_tailoring = st.button("Suggest Tailored Rewrites")
+
+    if run_tailoring:
+        if not job_description.strip():
+            st.warning("Please paste a Job Description first.")
+        else:
+            with st.spinner("Generating tailored suggestions..."):
+                cv_text = st.session_state.cv_texts[tailor_cv_choice]
+                resume = parse_resume(cv_text)
+                tailoring_result = tailor_cv_to_jd(resume["sections"], job_description)
+                st.session_state.tailoring_result = tailoring_result
+
+    if "tailoring_result" in st.session_state:
+        tailoring_result = st.session_state.tailoring_result
+
+        if "error" in tailoring_result:
+            st.error(tailoring_result["error"])
+            st.code(tailoring_result["raw_response"])
+        else:
+            for section_name, bullets in tailoring_result.items():
+                st.subheader(section_name)
+                for bullet in bullets:
+                    st.markdown(f"**Original:** {bullet['original']}")
+                    st.markdown(f"**Suggested:** {bullet['rewritten']}")
+                    st.divider()
