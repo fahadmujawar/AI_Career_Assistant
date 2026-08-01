@@ -1,5 +1,7 @@
 # AI Career Assistant
 
+🔗 **[Live Demo](https://ai-career-assistant-fahad.streamlit.app)**
+
 A Streamlit app that analyzes how well a CV matches a job description, using both traditional keyword matching and Gemini-powered qualitative analysis and tailoring suggestions.
 
 ## Why I built this
