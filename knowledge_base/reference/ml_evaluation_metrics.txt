@@ -1,0 +1,98 @@
+EVALUATION METRICS FOR MACHINE LEARNING SYSTEMS
+
+Evaluation is the process of measuring whether a model does what it is
+intended to do, using quantitative measures computed against known or
+reference data. A model without an evaluation procedure cannot be shown to
+have improved, because there is nothing against which to compare a change.
+Most job descriptions in machine learning list model evaluation as a
+requirement, and the specific metrics expected depend on the task type.
+
+CLASSIFICATION METRICS
+Accuracy is the proportion of predictions that are correct. It is misleading
+on imbalanced datasets, because a classifier that always predicts the majority
+class can score highly while being useless. Precision is the proportion of
+positive predictions that are actually positive, and recall is the proportion
+of actual positives that were correctly identified. These trade off against
+each other: raising a decision threshold typically increases precision and
+decreases recall. The F1 score is the harmonic mean of precision and recall,
+used when a single number is needed. A confusion matrix shows the full
+breakdown of correct and incorrect predictions per class. ROC-AUC measures
+ranking quality across all thresholds and is threshold-independent.
+
+IMAGE QUALITY METRICS
+Peak Signal-to-Noise Ratio (PSNR) expresses the ratio between the maximum
+possible pixel value and the mean squared error between two images, on a
+logarithmic decibel scale. Higher values indicate greater pixel-level
+similarity. PSNR reflects only per-pixel differences and correlates poorly
+with human perception, so two images that look similar can score badly if
+shifted or differently exposed.
+
+The Structural Similarity Index (SSIM) compares two images on luminance,
+contrast and local structure rather than raw pixel differences, producing a
+value up to 1, where 1 indicates identical images. SSIM correlates more
+closely with human judgement than PSNR and is widely used in medical imaging.
+
+Both PSNR and SSIM are reference-based metrics: they compare one image against
+one specific ground-truth image, and are designed for tasks such as
+reconstruction, denoising and super-resolution where a true paired reference
+exists. They are not well suited to unconditional generative sampling, where
+a generated image has no corresponding real image to be compared against. In
+that setting, pairing generated and real images arbitrarily produces low
+absolute scores that reflect the absence of correspondence rather than poor
+image quality, and only relative comparisons between models evaluated
+identically remain meaningful.
+
+DISTRIBUTION-LEVEL METRICS FOR GENERATIVE MODELS
+Frechet Inception Distance (FID) compares the distribution of features
+extracted from real and generated image sets by a pretrained Inception
+network, rather than comparing individual image pairs. Lower values indicate
+that the two distributions are closer. FID is the standard metric for
+unpaired image generation, though its Inception features were learned on
+natural images and may not capture medical image semantics well. Kernel
+Inception Distance (KID) is a related measure that is less biased on small
+sample sizes. Learned Perceptual Image Patch Similarity (LPIPS) measures
+perceptual distance using learned features and is used where paired
+comparison is appropriate.
+
+RETRIEVAL AND RANKING METRICS
+Systems that return a ranked list of results are evaluated against a labelled
+set of queries with known correct answers. Hit rate at k is the proportion of
+queries for which at least one correct item appears in the top k results.
+Recall at k is the proportion of all correct items that appear in the top k.
+Mean reciprocal rank averages the reciprocal of the position of the first
+correct result, rewarding systems that rank the correct item higher rather
+than merely including it. Precision at k measures how much of the returned
+set is relevant, which matters when irrelevant results consume a limited
+context budget.
+
+EVALUATING GENERATED TEXT
+Language model outputs are commonly assessed on faithfulness, meaning whether
+every claim in the output is supported by the source material provided, and on
+relevance, meaning whether the output addresses the question asked. Because
+these properties are difficult to compute directly, they are often scored by a
+separate language model applied to a written rubric, an approach known as
+LLM-as-judge. Judge scores are estimates and should be validated against
+human labels on a sample before being trusted. Refusal behaviour is evaluated
+separately: a system given questions whose answers are absent from its sources
+should decline rather than answer, and a confident answer produced from the
+model's own prior knowledge counts as a failure even if it happens to be
+factually correct.
+
+BASELINES AND RELATIVE IMPROVEMENT
+An absolute metric value is difficult to interpret without a point of
+comparison. Evaluation therefore requires a baseline, most often the
+unmodified or pretrained model, measured under identical conditions on
+identical data. A result that is low in absolute terms can still demonstrate
+that an intervention worked if it improves clearly on that baseline. Where
+absolute values are compared against figures published in the literature,
+differences in dataset, resolution, sample size and metric implementation must
+be accounted for, since these frequently differ enough to make direct
+comparison invalid.
+
+LIMITS OF QUANTITATIVE EVALUATION
+No single metric captures whether a model is fit for its purpose. Metrics
+measure specific, narrow properties, and a model can score well while failing
+in ways the metric does not observe, such as a synthetic radiograph that is
+numerically similar to a reference but anatomically implausible. Quantitative
+evaluation is therefore usually combined with qualitative inspection and, in
+regulated or high-stakes domains, expert review.

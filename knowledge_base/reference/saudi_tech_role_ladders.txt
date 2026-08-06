@@ -1,0 +1,71 @@
+TECHNICAL ROLE LEVELS AND HIRING EXPECTATIONS IN THE SAUDI TECHNOLOGY MARKET
+
+Job titles in data and artificial intelligence roles are not standardised.
+The same title can denote different levels of seniority at different
+employers, and the stated years of experience in a posting is a more reliable
+indicator of level than the title itself. The following bands describe
+conventions observable across postings rather than a formal framework.
+
+ENTRY LEVEL
+Titles include Intern, Trainee, Graduate, Co-op, Junior and Associate.
+Postings typically ask for zero to two years of experience and accept a
+recent bachelor's or master's degree in place of professional experience.
+Expectations centre on foundational programming, willingness to learn, and
+working under supervision. Academic projects and dissertations are treated as
+relevant evidence at this level and are often the main basis of assessment.
+Candidates at this level are usually evaluated on potential rather than
+demonstrated delivery.
+
+MID LEVEL
+Titles include Engineer, Data Scientist, Analyst and, at many employers,
+Specialist. Postings typically ask for two to six years of experience.
+Expectations shift from learning to independent delivery: owning a component
+or a model end to end, making technical decisions with limited supervision,
+and being accountable for the outcome. Academic work carries little weight at
+this level, and postings in this band are generally not accessible to
+candidates without professional experience regardless of how the application
+is presented.
+
+SENIOR AND ABOVE
+Titles include Senior Engineer, Lead, Principal, Architect and Manager.
+Postings typically ask for six or more years, and often specify experience
+leading projects or people, defining architecture, or setting technical
+direction. The word Senior or Principal in a title, or a stated requirement
+above about six years, indicates the posting is closed to early-career
+applicants.
+
+READING EXPERIENCE REQUIREMENTS
+Stated experience ranges are usually treated as firm rather than aspirational
+for the lower bound, particularly in large organisations and government-linked
+entities where recruitment is governed by grading structures. A gap of one
+year below the stated minimum is sometimes negotiable if other requirements
+are strongly met. A gap of several years is not. Postings that describe both a
+degree requirement and a multi-year experience requirement are indicating a
+mid-level or senior hire, not a graduate hire.
+
+EMPLOYMENT ELIGIBILITY AND LOCALISATION
+Employment in Saudi Arabia for non-citizens requires a valid residency permit
+and work authorisation tied to a sponsoring employer, with the job title on
+the permit expected to match the actual role under the national occupational
+classification. Saudi Arabia operates workforce localisation policies,
+commonly known as Saudization or Nitaqat, which set minimum percentages of
+Saudi nationals that private-sector establishments must employ. These
+percentages are profession-specific and have been increased progressively.
+As of 2026, engineering professions are subject to a 30 percent localisation
+requirement for establishments employing five or more accredited engineers,
+with a compliance deadline of 30 June 2026, a minimum monthly salary of
+SAR 8,000 for the Saudi engineers counted toward the quota, and mandatory
+Saudi Council of Engineers accreditation. Certain roles are reserved for
+Saudi nationals entirely. These requirements affect employer hiring capacity
+rather than individual candidate quality, and mean that some postings are
+effectively unavailable to expatriate applicants irrespective of fit.
+Localisation percentages and covered professions change, and any figure
+should be verified against the Ministry of Human Resources and Social
+Development for the current position.
+
+VISION 2030 CONTEXT
+Saudi Arabia's Vision 2030 programme includes substantial investment in
+digital infrastructure and artificial intelligence, which has increased
+demand for data and AI roles. This growth coexists with localisation
+policy, so expanding demand does not translate uniformly into openings for
+expatriate candidates.

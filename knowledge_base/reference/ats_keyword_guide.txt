@@ -1,0 +1,65 @@
+APPLICANT TRACKING SYSTEMS AND KEYWORD SCREENING
+
+An applicant tracking system (ATS) is the software an employer uses to receive,
+store, search and manage job applications. Common examples include Workday,
+Taleo, SuccessFactors, Greenhouse, Lever and iCIMS. An ATS is primarily a
+database and workflow tool. It is widely but incorrectly believed that these
+systems automatically reject most applications on the basis of a keyword score.
+In practice, most rejection decisions are made by a recruiter reading a
+shortlist, and the ATS influences the outcome mainly by determining whether an
+application appears in that shortlist at all.
+
+PARSING
+When a CV is submitted, the ATS extracts its text and attempts to map content
+into structured fields such as name, contact details, employment history with
+dates, education and skills. Parsing accuracy depends on document structure.
+Multi-column layouts, text placed inside tables or text boxes, headers and
+footers, graphics, icons and skill-rating bars are frequently misread or
+dropped, because the extracted reading order does not match the visual order.
+Text stored as an image cannot be extracted at all. Non-standard section
+headings such as "Where I Have Worked" may not be recognised as employment
+history. A single-column layout with conventional headings - Professional
+Summary, Skills, Experience, Education - parses most reliably. Modern systems
+handle PDF files produced from a word processor without difficulty, but a PDF
+created by scanning or exporting an image will fail.
+
+HOW RECRUITERS ACTUALLY SEARCH
+Recruiters typically search the candidate database using keywords and boolean
+queries for the skills that matter most to a role, for example a query
+combining Python with PyTorch and a location. Candidates whose CVs do not
+contain the searched terms do not appear in the result set, regardless of how
+well qualified they are. This is the main mechanism by which a strong candidate
+is never seen. Keywords must therefore appear in the exact form a recruiter is
+likely to type. Because usage varies, it is safer to include both the acronym
+and the expanded phrase on first use, for example "retrieval-augmented
+generation (RAG)" or "large language model (LLM)". A CV that describes work
+only in general terms, without naming the specific tools, frameworks and
+techniques used, is effectively invisible to keyword search.
+
+HARD FILTERS
+Many application forms include structured knockout questions covering years of
+experience, education level, work authorisation, location and language. Answers
+to these are structured data rather than free text and are commonly used to
+filter automatically. Unlike keyword matching, these filters are absolute: a
+posting requiring four to six years of experience will exclude a candidate with
+none, and no amount of CV optimisation changes that outcome. Distinguishing
+between a keyword problem, which can be fixed by rewriting, and an experience
+or eligibility problem, which cannot, is essential when deciding whether an
+application is worth submitting.
+
+TAILORING
+Because both keyword search and recruiter reading are role-specific, a single
+generic CV performs poorly across different role families. Effective tailoring
+means adopting the vocabulary of the posting where it genuinely describes work
+already done, ensuring the required tools and techniques are named explicitly,
+and removing content aimed at a different role family. Tailoring does not mean
+claiming experience that does not exist, and does not mean concealed keyword
+stuffing such as invisible white text, which is easily detected and treated as
+dishonesty.
+
+QUANTIFICATION AND EVIDENCE
+Recruiters reading a shortlist spend a short time on each CV. Bullets that name
+a tool, a scale and an outcome are assessed faster and more favourably than
+abstract descriptions of responsibility. Statements that cannot be quantified
+or evidenced tend to be read as padding, and a CV composed largely of such
+statements suggests the underlying work was limited even when it was not.

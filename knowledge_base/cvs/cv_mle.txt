@@ -1,0 +1,97 @@
+
+Machine Learning Engineer | Generative AI & Applied ML 
+PROFESSIONAL SUMMARY 
+MSc Computer Science (AI) graduate with hands-on, end-to-end machine learning experience spanning model development, 
+generative AI, and applied deployment. Built and served a full generative AI pipeline — fine-tuning diffusion foundation 
+models (Stable Diffusion, LoRA) on a 72,000+ image medical dataset — including GPU-accelerated training, evaluation, and 
+a working interactive application to serve model outputs. Strong foundation in Python, PyTorch, and SQL, with practical 
+exposure to cloud AI concepts (Oracle Cloud AI Foundations Associate). Seeking a Machine Learning Engineer role where I 
+can take models from experimentation into production and grow into MLOps and LLM-focused engineering. 
+TECHNICAL SKILLS 
+Programming & Data: Python (pandas, NumPy, scikit-learn), SQL, Java (academic), Jupyter 
+ML & Modelling: PyTorch, clustering, classification, feature engineering, model evaluation, pipeline development 
+Generative AI / Foundation Models: Diffusion models (Stable Diffusion), LoRA fine-tuning, Hugging Face Diffusers, PEFT — 
+transferable to LLM fine-tuning and adaptation workflows 
+Deployment & Serving: Built and ran a local inference application to serve and interact with model outputs; Git/GitHub 
+version control; familiar with cloud AI deployment concepts (Oracle Cloud AI Foundations Associate) 
+Infrastructure & Training: GPU-accelerated training on HPC infrastructure, Slurm batch scheduling 
+Data Analysis & Visualisation: Power BI, exploratory data analysis, trend analysis, dashboard creation 
+Evaluation: PSNR, SSIM, structured model comparison and benchmarking 
+MACHINE LEARNING PROJECTS 
+MSc Dissertation — LoRA Fine-Tuning of Diffusion Models for Chest X-Ray Synthesis   |   University of Nottingham 
+● 
+Built and deployed an end-to-end generative AI pipeline: fine-tuned Stable Diffusion using LoRA and Hugging Face 
+PEFT on a labelled dataset of 72,000+ medical images across multiple classes. 
+● 
+Ran GPU-accelerated training on university HPC infrastructure, managing jobs via Slurm batch scheduling — 
+experience directly transferable to managing training/inference workloads in cloud environments 
+(AWS/GCP/Azure). 
+● 
+Developed and served a working browser-based application to run inference and display model outputs 
+interactively, demonstrating ability to move a model from notebook to a usable, served product. 
+● 
+Benchmarked fine-tuned vs. baseline models using PSNR and SSIM, producing a structured, reproducible evaluation 
+report. 
+Retail Customer Segmentation & Behaviour Modelling 
+● 
+Analysed large-scale retail transaction and campaign-response data (Dunnhumby dataset) to support data-driven 
+decision making. 
+● 
+Cleaned and structured multi-source behavioural data; engineered features capturing spending patterns and 
+promotional responsiveness. 
+● 
+Applied clustering techniques to identify distinct customer segments and produced visual outputs for stakeholder-
+facing insights. 
+Machine Learning Pipeline Development 
+● 
+Built modular, reproducible end-to-end ML workflows in PyTorch: data ingestion, preprocessing, training, 
+evaluation, and comparison, designed for easy extension into a production pipeline. 
+● 
+Benchmarked multiple algorithms against structured metrics and documented results to support model-selection 
+decisions. 
+RESEARCH 
+Neural Network Classification (Publication)   |   Multilayer Perceptron for Single-Mode Operation Determination in Rib 
+Waveguides 
+● 
+Developed and trained MLP models achieving ~90% classification accuracy; conducted feature analysis and 
+structured evaluation. 
+
+PROFESSIONAL EXPERIENCE 
+Inclusive Student Experience Consultant   |   University of Nottingham 
+2024 – 2025 
+● 
+Analysed engagement data from 7,500+ participants across multiple demographic groups. 
+● 
+Built dashboards and produced insight summaries for senior academic stakeholders. 
+● 
+Performed structured data validation and multi-stage quality checks. 
+Consultant & Trainer   |   Rooman Technologies 
+2024 
+● 
+Delivered training sessions on Python and Excel for data analysis workflows. 
+● 
+Developed structured templates and materials to support consistent analysis practices. 
+Research & Teaching Assistant   |   PES University 
+2022 – 2024 
+● 
+Supported research teams in data preparation, validation, and documentation. 
+● 
+Produced structured summaries and assisted with reproducible analytical workflows. 
+EDUCATION 
+MSc Computer Science with Artificial Intelligence   |   University of Nottingham 
+2024 – 2025 
+Modules: Machine Learning, Data Science, Python Programming, Statistics, Digital Marketing 
+Dissertation: LoRA Fine-Tuning of Diffusion Models for Chest X-Ray Image Synthesis 
+B.Tech Electronics & Communication Engineering (High 2:1)   |   PES University — Minor in Management2020 – 2024 
+CERTIFICATIONS 
+● 
+Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate — cloud AI deployment concepts 
+● 
+Power BI 
+ADDITIONAL INFORMATION 
+● 
+Strong interest in applying machine learning to customer behaviour, retail analytics, recommendation systems, and 
+generative AI / LLM-based product features. 
+● 
+Comfortable communicating analytical and technical findings to both technical and non-technical audiences. 
+

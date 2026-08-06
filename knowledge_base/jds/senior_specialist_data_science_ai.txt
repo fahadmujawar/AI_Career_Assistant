@@ -1,0 +1,49 @@
+Job Purpose
+
+Design, develop, and deploy machine learning and Generative AI solutions to solve defined business problems, ensuring technical robustness, model performance, and responsible AI implementation.
+
+ 
+
+ Key Accountabilities
+
+Develop, test, and validate machine learning, deep learning, and Generative AI models (including LLM-based applications).
+
+Implement prompt engineering strategies and retrieval-augmented generation (RAG) pipelines.
+
+Perform feature engineering, model tuning, and performance optimization.
+
+Prepare, cleanse, and transform structured and unstructured datasets.
+
+Support deployment of ML and GenAI models using MLOps and LLMOps practices.
+
+Conduct structured evaluation of LLM outputs including hallucination detection and quality scoring.
+
+Integrate AI solutions via APIs into enterprise systems.
+
+Document model design, assumptions, risks, and validation results.
+
+Ensure compliance with data governance, cybersecurity, and ethical AI guidelines.
+
+Support monitoring, retraining, and lifecycle management of deployed models.
+Minimum Qualification, Experience and Competencies 
+
+Minimum Qualification 
+Bachelor’s degree in Data Science, Artificial Intelligence, Computer Science, or a related quantitative field
+
+Minimum Experience
+
+4–6 years in data science, machine learning, or applied AI roles.
+Skills:
+
+Python, SQL, ML frameworks (TensorFlow, PyTorch, Scikit-learn)
+Prompt engineering
+RAG pipelines & vector databases
+Model fine-tuning and evaluation
+Data preprocessing & feature engineering
+Basic cloud deployment concepts
+MLOps / LLMOps fundamentals
+Analytical problem-solving
+Results Orientation
+Collaboration
+Continuous Improvement
+Accountability

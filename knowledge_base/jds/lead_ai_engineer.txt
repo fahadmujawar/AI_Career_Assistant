@@ -1,0 +1,12 @@
+T4 – Lead AI / ML Engineer (8–11 Years)
+Role Focus: Technical leadership and enterprise solution delivery.
+
+Responsibilities
+Lead architecture and delivery of enterprise AI platforms and machine learning solutions.
+Define technical standards, reusable frameworks, and engineering best practices.
+Lead multiple AI initiatives across business domains.
+Drive cloud-native AI solution design and deployment.
+Review solution architecture, model performance, and production readiness.
+Mentor engineering teams and provide technical leadership.
+Collaborate with enterprise architects, product owners, and business leaders.
+Improve AI platform scalability, governance, security, and operational excellence

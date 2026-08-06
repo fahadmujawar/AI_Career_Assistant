@@ -1,0 +1,18 @@
+Job Description:
+Role Summary:
+Designs, trains, and deploys AI models that power the core product. Works closely with backend and product teams to integrate models efficiently into production systems.
+
+Key Responsibilities:
+
+Develop and fine-tune machine learning and NLP models.
+
+Collect, clean, and preprocess datasets.
+
+Evaluate model performance and optimize for scalability.
+
+Deploy models through APIs or cloud-based services.
+
+Collaborate with engineers to ensure model reliability in production.
+
+Required Skills:
+Python, PyTorch/TensorFlow, MLOps basics, cloud deployment (AWS/GCP), and data handling.

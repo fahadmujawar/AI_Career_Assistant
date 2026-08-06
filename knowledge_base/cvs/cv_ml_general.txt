@@ -1,0 +1,83 @@
+PROFESSIONAL SUMMARY 
+MSc Computer Science (AI) student with hands-on experience in machine learning, computer vision, and end-to-
+end model development. Built and evaluated predictive models, developed reproducible ML pipelines in PyTorch, 
+and fine-tuned diffusion models (Stable Diffusion, LoRA) for domain-specific medical image synthesis as part of 
+an MSc dissertation. Strong foundation in Python, SQL, and statistical modelling, with a focus on translating 
+behavioural data into structured insights. Seeking to apply machine learning in an eCommerce or logistics context, 
+particularly in understanding behavioural data and improving data-driven decision making. 
+TECHNICAL SKILLS 
+Programming & Data Processing: Python (pandas, numpy, scikit-learn), SQL, Java (academic experience), 
+Jupyter Notebooks 
+Machine Learning & Modelling: PyTorch, clustering, classification, feature engineering, model evaluation, 
+pipeline development 
+Deep Learning & Computer Vision: Diffusion models (Stable Diffusion), LoRA fine-tuning, Hugging Face 
+Diffusers, PEFT, image quality evaluation (PSNR, SSIM) 
+Infrastructure & Training: GPU-accelerated training on HPC infrastructure, Slurm batch scheduling 
+Data Analysis & Visualisation: Power BI, exploratory data analysis, trend analysis, dashboard creation 
+Tools & Workflow: Git (project version control via GitHub), reproducible notebooks, modular code structures 
+MACHINE LEARNING PROJECTS 
+MSc Dissertation  - LoRA Fine-tuning of Diffusion Models for Chest X-ray Image Synthesis 
+University of Nottingham 
+• Developed a generative AI pipeline for domain-specific medical image synthesis using Stable Diffusion and 
+LoRA fine-tuning. 
+• Fine-tuned diffusion models using Hugging Face Diffusers and PEFT techniques. 
+• Prepared and analysed a medical imaging dataset containing over 72,000 labelled X-ray images across multiple 
+classes. 
+• Implemented GPU-accelerated training workflows on university HPC infrastructure, submitting and managing 
+training jobs via Slurm batch scheduling. 
+• Evaluated generated outputs using image quality metrics including PSNR and SSIM. 
+• Investigated model performance differences between baseline and fine-tuned models. 
+• Developed a local, browser-based interface (run locally, not hosted) to display and interact with model-
+generated outputs. 
+Retail Customer Segmentation & Behaviour Modelling 
+• Analysed large-scale retail transaction and campaign-response data (Dunnhumby dataset). 
+• Cleaned and structured multi-source behavioural data and engineered features capturing spending patterns and 
+promotional responsiveness. 
+• Applied clustering techniques to identify distinct customer segments based on purchasing behaviour. 
+• Produced visual outputs to explain segment characteristics and potential targeting strategies. 
+• Demonstrates practical application of machine learning to customer behaviour analysis in a retail context. 
+Machine Learning Pipeline Development 
+• Built end-to-end ML workflows in PyTorch covering data ingestion, preprocessing, model training, evaluation, 
+and comparison. 
+• Designed modular and reproducible code structures for experimentation and iterative model improvement. 
+• Evaluated multiple algorithms using structured metrics and documented results for comparison. 
+• Demonstrates understanding of the machine learning lifecycle and experimentation process. 
+ 
+
+RESEARCH 
+Neural Network Classification (Publication) 
+Use of Multilayer Perceptron Classifier for Determination of Single Mode Operation in Rib Waveguides 
+• Developed and trained MLP models achieving ~90% classification accuracy. 
+• Conducted feature analysis, validation, and structured evaluation of model performance. 
+PROFESSIONAL EXPERIENCE 
+Inclusive Student Experience Consultant   -  University of Nottingham 
+2024 – 2025 
+• Analysed engagement data from 7,500+ participants across multiple demographic groups. 
+• Built dashboards and produced insight summaries for senior academic stakeholders. 
+• Performed structured data validation and multi-stage quality checks. 
+• Worked across teams to ensure consistent and clear reporting outputs. 
+Consultant & Trainer   -  Rooman Technologies 
+2024 
+• Delivered training sessions on Python and Excel for data analysis workflows. 
+• Developed structured templates and materials to support consistent analysis practices. 
+• Guided learners through end-to-end analytical problem solving. 
+Research & Teaching Assistant   -  PES University 
+2022 – 2024 
+• Supported research teams in data preparation, validation, and documentation. 
+• Produced structured summaries and assisted with reproducible analytical workflows. 
+EDUCATION 
+MSc Computer Science with Artificial Intelligence   -  University of Nottingham 
+2024 – 2025 
+Modules: Machine Learning, Data Science, Python Programming, Statistics, Digital Marketing 
+Dissertation: LoRA Fine-tuning of Diffusion Models for Chest X-ray Image Synthesis 
+B.Tech Electronics & Communication Engineering (High 2:1)   -  PES University 
+2020 – 2024 
+Minor in Management 
+ADDITIONAL INFORMATION 
+• Strong interest in applying machine learning to customer behaviour, retail analytics, and recommendation 
+problems. 
+• Comfortable communicating analytical findings to both technical and non-technical audiences. 
+CERTIFICATIONS 
+• Power BI 
+• Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate 
+

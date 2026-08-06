@@ -1,0 +1,38 @@
+T5 – Principal AI / ML Architect (12+ Years)
+Role Focus: Enterprise AI strategy, architecture, and innovation.
+
+Responsibilities
+Define enterprise AI/ML strategy and long-term technology roadmap.
+Own architecture decisions for large-scale AI and machine learning platforms.
+Lead enterprise-wide AI transformation initiatives.
+Establish standards for Responsible AI, governance, security, and compliance.
+Evaluate emerging AI technologies, frameworks, and cloud services.
+Drive innovation in Generative AI, LLMs, and advanced machine learning solutions.
+Provide executive-level technical guidance and strategic recommendations.
+Lead technical communities, architecture reviews, and cross-functional AI governance.
+Influence organizational AI adoption and engineering excellence across multiple programs.
+Preferred Certifications
+One or more of the following certifications is highly preferred:
+
+Google Professional Machine Learning Engineer
+AWS Certified Machine Learning – Specialty
+Microsoft Certified: Azure AI Engineer Associate
+TensorFlow Developer Certificate
+Expected Deliverables
+Machine Learning Model Documentation
+Model Training & Evaluation Reports
+Feature Engineering Documentation
+Model Cards
+Production Deployment Pipelines
+Monitoring & Performance Dashboards
+AI Solution Design Documents
+Model Validation Reports
+Inference APIs
+Production-Ready ML Models
+Preferred Qualifications
+Bachelor's or Master's degree in Computer Science, Artificial Intelligence, Machine Learning, Data Science, Software Engineering, or a related field.
+Strong understanding of statistics, machine learning algorithms, deep learning, and generative AI concepts.
+Experience with cloud AI platforms and modern ML frameworks.
+Knowledge of MLOps, CI/CD, model deployment, and production monitoring is an advantage.
+Strong analytical, communication, and problem-solving skills.
+Ability to work in Agile, cross-functional, and enterprise-scale environments.
