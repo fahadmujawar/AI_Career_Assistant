@@ -17,5 +17,5 @@ data/parsed/
 
 .vscode/
 data/chunks.jsonl
-
-data/chunks.jsonl
+data/faiss.index
+data/chunk_meta.json
