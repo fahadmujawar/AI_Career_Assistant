@@ -64,7 +64,7 @@ Run it locally with:
 ```
 venv\Scripts\uvicorn.exe api.main:app --reload
 ```
-Requires `fastapi` installed (not yet pinned in `requirements.txt` — install it manually with `pip install fastapi` if a fresh clone is missing it).
+`fastapi` is included in `requirements.txt`.
 
 ## Known limitations
 
