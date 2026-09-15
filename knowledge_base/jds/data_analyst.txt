@@ -1,0 +1,66 @@
+Full job description
+Job Summary
+We are seeking a skilled and detail-oriented Data Analyst to join our team. The successful candidate will work closely with Product, Engineering, and Business teams to transform data into actionable insights that inform product decisions, improve operations, and support strategic initiatives. This role requires strong experience in data analysis, SQL, visualization, and effective communication of findings to technical and non-technical stakeholders.
+
+Key Responsibilities
+Data Analysis & Insight Generation
+Collect, clean, and analyze structured and unstructured data from multiple sources to support product, marketing, and operations teams.
+
+Develop and maintain reports and dashboards that communicate key performance indicators (KPIs), trends, and anomalies.
+
+Perform exploratory data analysis and root-cause investigations to answer business questions and recommend data-driven actions.
+
+Data Modeling & Pipeline Collaboration
+Collaborate with Data Engineering to define data requirements, improve ETL/ELT processes, and ensure data quality and consistency.
+
+Design and validate data models and metrics to ensure reliable and repeatable analyses across teams.
+
+Document data sources, transformation logic, and metric definitions to promote transparency and reproducibility.
+
+Reporting, Visualization & Communication
+Create clear, effective visualizations and presentations that communicate insights, trade-offs, and recommendations to stakeholders.
+
+Partner with Product and Business teams to translate analytic results into prioritized roadmap items and operational improvements.
+
+Provide ad-hoc analyses and respond to data requests with well-documented methodologies and reproducible code.
+
+Testing, Measurement & Experimentation
+Support experiment design, implementation, and analysis (A/B testing), including metric selection, power calculations, and interpretation of results.
+
+Define and track success metrics for new features and product launches to measure impact and guide iteration.
+
+Implement monitoring to detect data drift, metric regressions, and pipeline failures impacting business reporting.
+
+Documentation, Governance & Collaboration
+Maintain thorough documentation of analyses, dashboards, data dictionaries, and standard operating procedures.
+
+Advocate for data governance best practices, including access controls, lineage tracking, and consistent metric definitions.
+
+Mentor colleagues on data literacy and partner across teams to embed analytics into decision-making processes.
+
+Required Qualifications - Skills & Experience
+Bachelor’s degree in Data Science, Statistics, Mathematics, Computer Science, Economics, or a related field, or equivalent practical experience.
+
+2+ years of professional experience in an analytics or data-focused role, preferably supporting product or operations teams.
+
+Proficiency in SQL for data extraction, transformation, and analysis; experience optimizing complex queries and working with large datasets.
+
+Experience building dashboards and visualizations using tools such as Looker, Tableau, Power BI, or equivalent.
+
+Familiarity with statistical methods, hypothesis testing, and basic causal inference concepts used in experimentation and analysis.
+
+Comfort with Python or R for data manipulation and analysis (pandas, numpy, scipy, or tidyverse) and reproducible reporting.
+
+Strong problem-solving skills, attention to detail, and effective written and verbal communication for presenting findings to diverse audiences.
+
+Preferred Qualifications
+Experience with cloud data platforms and warehouses (BigQuery, Snowflake, Redshift) and familiarity with SQL dialects and performance tuning.
+
+Knowledge of data engineering concepts, ETL/ELT frameworks, and experience collaborating with engineering teams to productionize analyses.
+
+Experience with experimentation platforms and advanced causal inference or machine learning techniques to inform product decisions.
+
+Experience with version control (Git), workflow automation, and code review practices for analytical codebases.
+
+Relevant certifications or coursework in data analytics, statistics, or data engineering are a plus.
+

@@ -1,0 +1,12 @@
+Senior AI / ML Engineer (5–7 Years)
+Role Focus: Technical ownership and solution development.
+
+Responsibilities
+Design end-to-end AI and machine learning solutions.
+Lead development of complex ML pipelines and AI applications.
+Optimize training pipelines for performance and scalability.
+Guide junior engineers and perform technical reviews.
+Implement Responsible AI, explainability, and governance practices.
+Improve model reliability, monitoring, and lifecycle management.
+Collaborate with business stakeholders to translate requirements into AI solutions.
+Support architecture decisions for enterprise AI initiatives.

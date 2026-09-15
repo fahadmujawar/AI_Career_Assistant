@@ -1,0 +1,70 @@
+Company:
+Qualcomm Middle East Information Technology Company LLC
+Job Area:
+Engineering Group, Engineering Group > Systems Engineering
+General Summary:
+
+About Us
+
+As a leading technology innovator, Qualcomm pushes the boundaries of what's possible to enable next-generation experiences and drives digital transformation to help create a smarter, connected future for all. 
+
+As a Qualcomm Datacenter AI Systems Engineer focused on AI Inference Platforms and Competitive Analysis, you will evaluate, benchmark, optimize, and validate end-to-end AI inference solutions built on Qualcomm AI accelerators. You will analyze real-world customer deployments, assess competitive platforms, and develop fact-based insights on performance, scalability, ecosystem readiness, and operational simplicity across modern GenAI workloads including LLMs, VLMs, RAG, and agentic applications. 
+
+About the role
+
+In this role, you will work across hardware, software, frameworks, and deployment architectures to identify differentiators, gaps, and opportunities that shape Qualcomm's AI platform roadmap and customer engagement strategy. You will collaborate closely with architecture, product, systems, customer engineering, business development, and ecosystem teams to establish Qualcomm AI accelerators as a leading platform for enterprise AI inference deployments. 
+
+Minimum Qualifications:
+
+Bachelor’s degree in engineering, computer science, or Data Science with 8+ years of experience
+Master's degree in Engineering, Computer Science, Data Science or related field and 4+ year of related work experience.
+OR
+
+PhD in Engineering, Computer Science, or related field and 4+ years of Experience.
+Required Skills:
+
+Strong proficiency in Python and common AI/ML frameworks such as PyTorch, TensorFlow, or ONNX.
+Solid understanding of ML model development, deployment, and AI inference concepts for datacenter workloads. 
+Strong foundation in system performance profiling, benchmarking, parallel computing, and workload analysis. 
+Working knowledge of Linux-based development, containerized deployment, and cloud-native infrastructure concepts. 
+Strong analytical, communication, and cross-functional collaboration skills with the ability to summarize technical findings clearly. 
+Preferred Qualifications:
+
+Master's or PhD degree in Engineering, Computer Science, Information Systems, Electrical Engineering, Physics, or a related technical field with 4+ years of experience. 
+Strong understanding of GenAI and enterprise inference workloads, including LLMs, VLMs/LVMs, embeddings, diffusion models, RAG pipelines, agents, and multi-turn application patterns. 
+Hands-on experience evaluating AI accelerator platforms and deployment ecosystems, including Qualcomm AI inference accelerators and competitive platforms such as NVIDIA and AMD. 
+Experience with production inference frameworks and serving stacks such as vLLM, Triton Inference Server, TensorRT-LLM, SGLang, KServe, Ray Serve, TorchServe, or equivalent model-serving technologies. 
+Deep understanding of inference performance fundamentals, including prefill/decode behavior, KV-cache utilization, batching, scheduling, quantization, memory bandwidth, latency, throughput, TTFT, TPOT, and scaling efficiency. 
+Experience designing and executing fact-based competitive benchmarks across single-node and multi-node deployments using representative customer workloads, model configurations, and deployment patterns. 
+Knowledge of distributed inference architectures, including tensor parallelism, pipeline parallelism, expert parallelism/MoE serving, disaggregated serving, routing, autoscaling, and cluster-level orchestration. 
+Experience with containerized and cloud-native deployment workflows using Docker, Kubernetes, Helm, GitOps, CI/CD, observability stacks, and infrastructure automation. 
+Ability to assess ecosystem readiness, operational simplicity, tooling maturity, model onboarding complexity, reference architectures, observability, supportability, and deployment documentation quality. 
+Background in compiler/runtime optimization, graph lowering, operator fusion, kernel optimization, or hardware-aware model optimization for ML workloads is a plus. 
+Experience conducting technical competitive analysis across AI hardware platforms, frameworks, software ecosystems, deployment architectures, and customer workflows. 
+Experience building customer-facing technical collateral, competitive positioning, deployment guides, benchmark reports, executive briefings, and gap analysis for AI infrastructure products. 
+Strong cross-functional collaboration skills with demonstrated ability to work across product, architecture, engineering, customer engineering, business development, and ecosystem partner teams in a matrixed organization. 
+Principal Duties and Responsibilities will include:
+
+End-to-end competitive analysis for Qualcomm AI inference accelerators across hardware, software, model-serving frameworks, deployment workflows, and customer-facing GenAI inference solutions. 
+Evaluate real customer deployment patterns, including LLM/VLM serving, RAG, agentic workflows, embedding services, multi-model applications, and enterprise inference pipelines, to identify where Qualcomm leads, is at parity, or has gaps. 
+Develop objective benchmark methodologies and execute performance studies covering latency, TTFT, TPOT, throughput, tokens/sec/user, concurrency, utilization, power efficiency, cost efficiency, and single-node and multi-node scaling. 
+Compare Qualcomm solutions against competitive platforms such as NVIDIA and AMD across deployment maturity, model coverage, framework support, ecosystem readiness, operational simplicity, and total solution capability. 
+Analyze inference architecture tradeoffs involving vLLM, Triton Inference Server, KServe, Ray Serve, Kubernetes, orchestration layers, KV-cache management, batching strategies, quantization, and distributed serving patterns. 
+Drive model onboarding prioritization by studying competitive usage, customer demand, model popularity, framework adoption, and readiness gaps across open-source and enterprise GenAI workloads. 
+Build and maintain reference architectures, deployment playbooks, sizing guidance, reproducible benchmark recipes, and customer-ready solution blueprints for Qualcomm AI inference platforms. 
+Partner with architecture, compiler, runtime, framework, systems, and product teams to translate competitive findings into product requirements, roadmap priorities, optimization opportunities, and ecosystem investments. 
+Perform system-level debugging and root-cause analysis across model, framework, runtime, driver, hardware, networking, memory, and orchestration layers to explain performance or deployment gaps. 
+Create clear, fact-based competitive positioning, leadership readouts, technical reports, and customer-facing collateral that communicate differentiators, risks, gaps, and recommended actions. 
+Collaborate with customer engineering, business development, sales, and partner teams to support customer evaluations, proof-of-concepts, competitive bakeoffs, and deployment activities. 
+Stay current with the evolving AI inference ecosystem, including emerging models, serving frameworks, accelerator platforms, open-source projects, benchmarking practices, and enterprise deployment trends. 
+
+
+Minimum Qualifications:
+
+•    Bachelor's degree in Engineering, Information Systems, Computer Science, or related field and 4+ years of Systems Engineering or related work experience.
+OR
+Master's degree in Engineering, Information Systems, Computer Science, or related field and 3+ years of Systems Engineering or related work experience.
+OR
+PhD in Engineering, Information Systems, Computer Science, or related field and 2+ years of Systems Engineering or related work experience.
+*References to a particular number of years experience are for indicative purposes only. Applications from candidates with equivalent experience will be considered, provided that the candidate can demonstrate an ability to fulfill the principal duties of the role and possesses the required competencies.
+

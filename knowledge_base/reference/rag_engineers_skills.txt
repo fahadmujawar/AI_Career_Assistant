@@ -1,0 +1,74 @@
+RAG AND GENERATIVE AI ENGINEERING: EXPECTED SKILLS
+
+Retrieval-augmented generation (RAG) is an architecture for making a large
+language model answer questions using a specific document corpus rather than
+relying only on what the model learned during training. Instead of fine-tuning
+the model on private data, relevant passages are retrieved at query time and
+supplied to the model as context. Employers hiring for GenAI and applied AI
+roles increasingly treat RAG as a baseline competency rather than a specialism.
+
+DOCUMENT PROCESSING AND CHUNKING
+Source documents must be split into passages small enough to retrieve
+precisely but large enough to remain meaningful. Chunk size and overlap are
+tuning parameters: chunks that are too small lose context, while chunks that
+are too large dilute the embedding and reduce retrieval precision. Overlapping
+windows prevent information that sits on a boundary from being lost. Metadata
+attached at ingest time - source filename, document type, position in the
+document - enables citation and filtered retrieval later, and cannot be
+recovered without re-indexing.
+
+EMBEDDINGS AND VECTOR SEARCH
+Text is converted into fixed-length numeric vectors by an embedding model, so
+that passages with similar meaning sit close together in vector space.
+Similarity is usually measured by cosine similarity, which compares direction
+rather than magnitude; normalising vectors to unit length allows an inner
+product search to compute cosine similarity directly. Vector databases and
+libraries such as FAISS, Chroma, pgvector, Pinecone and Weaviate store these
+vectors and support approximate nearest-neighbour search at scale. Practical
+tradeoffs include index type, embedding dimensionality, memory footprint, and
+recall versus latency.
+
+RETRIEVAL QUALITY
+Returning the top k most similar chunks is only a starting point. Common
+improvements include hybrid search, which combines dense vector similarity
+with keyword matching such as BM25 to catch exact terms that embeddings miss;
+re-ranking, where a cross-encoder or an LLM reorders an initially larger
+candidate set; query rewriting, where a vague user question is expanded before
+retrieval; and similarity thresholds, which allow the system to return nothing
+rather than return irrelevant context.
+
+GROUNDING AND HALLUCINATION CONTROL
+The generation prompt must instruct the model to answer only from the supplied
+context, to cite which passages it used, and to state explicitly when the
+answer is not present in the documents. A system that answers confidently from
+its own parametric knowledge when retrieval fails is worse than one that
+declines, because the failure is invisible to the user. Citations make outputs
+auditable and are frequently a compliance requirement in regulated sectors.
+
+EVALUATION
+RAG systems are evaluated in two stages. Retrieval is measured with ranking
+metrics such as hit rate at k, recall at k, and mean reciprocal rank, computed
+against a labelled set of questions with known correct source documents.
+Generation is measured on faithfulness - whether every claim in the answer is
+supported by the retrieved context - and answer relevance, often assessed by
+an LLM acting as a judge against a rubric, and validated against human
+labels. Frameworks such as RAGAS and DeepEval provide implementations.
+Without an evaluation set, changes to a RAG pipeline cannot be shown to be
+improvements.
+
+DEPLOYMENT AND OPERATIONS
+Production RAG systems require an API layer, typically FastAPI, containerised
+with Docker and deployed to a cloud platform. Operational concerns include
+re-indexing when source documents change, caching to control cost and latency,
+token and cost monitoring per request, logging of queries and retrieved
+context for debugging, guardrails against prompt injection from untrusted
+document content, and removal of personally identifiable information at ingest
+rather than relying on prompt instructions. This operational layer is often
+referred to as LLMOps.
+
+RELATED SKILLS
+Python is the standard language. Orchestration frameworks such as LangChain
+and LlamaIndex are widely used, though many teams prefer direct API calls for
+transparency and control. Parameter-efficient fine-tuning methods including
+LoRA and QLoRA are used when prompting and retrieval alone are insufficient,
+and are commonly combined with RAG rather than treated as alternatives.

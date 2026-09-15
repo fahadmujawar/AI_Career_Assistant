@@ -1,0 +1,12 @@
+AI / ML Engineer (2–4 Years)
+Role Focus: Independent development and delivery.
+
+Responsibilities
+Build and deploy production-ready machine learning models.
+Perform feature engineering and model optimization.
+Develop reusable ML components and inference APIs.
+Implement model evaluation and performance monitoring.
+Integrate ML models into enterprise applications.
+Collaborate with cross-functional engineering teams.
+Troubleshoot production AI issues.
+Contribute to model documentation and deployment automation.

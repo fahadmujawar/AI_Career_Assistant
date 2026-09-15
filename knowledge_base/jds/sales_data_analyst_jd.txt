@@ -1,0 +1,33 @@
+About the Job
+Job Summary
+
+We are seeking a detail-oriented Sales Data Analyst to join our commercial analytics team. This role is responsible for collecting, analyzing, and translating sales and customer data into actionable insights that support sales strategy, forecasting, and decision-making. The ideal candidate has experience with sales data, strong analytical and communication skills, and a collaborative mindset to work with sales, marketing, and operations stakeholders.
+
+Key Responsibilities
+
+Develop, maintain, and automate sales reports, dashboards, and KPI scorecards to track performance across channels, regions, products, and customer segments.
+Analyze sales trends, pipeline health, win/loss drivers, and customer behavior to identify opportunities for growth, retention, and process improvement.
+Produce regular and ad hoc forecasts, quota assessments, and variance analyses to support monthly and quarterly planning cycles.
+Work closely with sales operations and CRM administrators to ensure data integrity, optimize CRM processes, and support territory and quota modeling.
+Translate complex data findings into clear, concise presentations and recommendations for sales leadership and cross-functional teams.
+Design and execute A/B tests and campaign analyses in collaboration with marketing to measure effectiveness and inform go-to-market decisions.
+Support pricing, promotion, and product launch analyses by providing scenario modeling and post-launch performance reviews.
+Document analytical methods, data definitions, and reporting requirements to promote consistency and reproducibility across the organization.
+Participate in cross-functional projects and continuous improvement initiatives to enhance data tooling, processes, and analytics maturity.
+Adhere to company policies, data privacy standards, and security guidelines when handling sensitive customer and sales information.
+Required Qualifications
+
+Bachelor’s degree in Business, Economics, Statistics, Mathematics, Data Science, or a related field; relevant work experience may be considered in lieu of a degree.
+Minimum 2 years of experience in sales analytics, business intelligence, or a related analytical role supporting commercial teams.
+Proven experience working with sales/CRM systems (e.g., Salesforce, HubSpot) and relational databases.
+Legal authorization to work in the hiring country.
+Required Skills
+
+Strong proficiency with SQL for data extraction and manipulation; experience with ETL concepts and data pipelines.
+Hands-on experience building dashboards and visualizations with tools such as Tableau, Power BI, or Looker.
+Advanced Excel skills, including pivot tables, lookup functions, and data modeling.
+Analytical mindset with strong problem-solving skills and the ability to synthesize large data sets into actionable recommendations.
+Excellent verbal and written communication skills with the ability to present findings to technical and non-technical audiences.
+Experience with statistical or scripting languages (Python, R) is a plus.
+Strong attention to detail, time management skills, and the ability to manage multiple priorities in a fast-paced environment.
+Collaborative team player with a customer-focused approach to supporting sales and commercial stakeholders.

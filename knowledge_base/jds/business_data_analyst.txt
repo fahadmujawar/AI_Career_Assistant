@@ -1,0 +1,39 @@
+Job Description
+
+A Business Data Analyst translates business requirements into data-driven insights, serving as the bridge between data experts and business stakeholders. They apply analytical skills, domain knowledge, and business acumen to interpret complex data sets and produce actionable recommendations that directly impact strategic and operational business decisions. At this level, analysts independently manage analytical projects, collaborate with cross-functional teams, and clearly communicate insights to management and stakeholders, influencing strategic initiatives and driving tangible business outcomes.
+
+Technical and Analytical Capabilities:
+
+Advanced Excel Skills: Pivot tables, advanced formulas, scenario modeling.
+Proficiency with Data Querying: SQL for data retrieval and manipulation.
+Data Visualization: Tableau, Power BI, Looker to develop interactive dashboards.
+Analytical Programming: Familiarity with Python or R for exploratory analysis.
+Understanding of Data Warehousing: Experience with relational databases and data structures for efficient data extraction and interpretation.
+Statistical Methods: Capability to perform descriptive analytics, correlation, and regression analysis to interpret business performance.
+Business-Oriented Capabilities:
+
+Business Acumen: Deep understanding of organizational processes, strategies, and KPIs to interpret data in relevant business contexts.
+Requirement Elicitation: Ability to gather, clarify, and refine business stakeholder needs and convert them into analytical tasks.
+Strategic Thinking: Align data analysis with business objectives, proactively identifying opportunities and recommending improvements.
+Communication and Soft Skills:
+
+Strong Communication: Clearly explain analytical findings in straightforward business language, tailored to different stakeholders (including executives).
+Data Storytelling: Ability to craft compelling narratives from data to highlight actionable insights.
+Stakeholder Management: Comfortably interacting across departments, from technical teams to senior business executives.
+Problem-Solving and Critical Thinking: Proactively identify issues and approach business challenges analytically, offering practical solutions.
+
+Project and Task Management:
+
+Project Leadership: Independently manage end-to-end analytical projects from requirement gathering to delivering insights.
+Time Management: Efficiently prioritize multiple concurrent tasks or projects to meet deadlines and business expectations.
+Documentation and Reporting: Maintain comprehensive documentation of analytical methodologies and findings, ensuring transparency and reproducibility.
+Qualifications
+
+One core certification (CCBA, CAP, or PMI-PBA)
+One data visualization certification (Tableau or Power BI)
+One complementary certification (optional but preferred)
+Additional Information
+
+Level: Mid-senior Level
+
+Business Unit: Data Intelegince
