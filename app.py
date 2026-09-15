@@ -5,7 +5,7 @@ from utils.resume_parser import parse_resume
 from utils.matcher import match_keywords
 from utils.ai_analysis import analyze_cv_against_jd
 from utils.ai_analysis import tailor_cv_to_jd
-from utils.ai_client import is_demo_mode
+from utils.ai_client import is_demo_mode, render_provider_selector
 
 
 
@@ -16,6 +16,8 @@ st.set_page_config(
 )
 
 st.title("AI Career Assistant")
+
+selected_provider = render_provider_selector()
 
 st.write(
     "Upload one or more master CVs and compare them against a Job Description."
@@ -79,7 +81,8 @@ st.header("2. Paste Job Description")
 
 job_description = st.text_area(
     "Paste the complete Job Description below",
-    height=250
+    height=250,
+    key="job_description"
 )
 
 st.divider()
@@ -115,17 +118,23 @@ if analyse:
                 st.write(", ".join(result["missing"]) if result["missing"] else "None")
 
 st.divider()
-st.header("3. AI-Powered Analysis (Gemini)")
+st.header("3. AI-Powered Analysis")
 
 if uploaded_files:
     cv_names = [file.name for file in uploaded_files]
     selected_cv = st.selectbox("Choose a CV to analyze with AI", cv_names)
 
+    if len(cv_names) > 1:
+        st.caption(
+            "You've uploaded more than one CV — strengths, gaps, and "
+            "suggestions may cite content from your other uploads by filename."
+        )
+
     if is_demo_mode():
         st.info(
-            "This feature calls the Gemini API and is disabled on the public demo "
-            "to avoid exhausting the shared free-tier quota. Clone the repo and add "
-            "your own Gemini API key to try it yourself — see the README for setup steps. "
+            "This feature calls an AI model's API and is disabled on the public demo "
+            "to avoid exhausting shared free-tier quotas. Clone the repo and add "
+            "your own API key to try it yourself — see the README for setup steps. "
             "Below is a real example of this feature's output."
         )
         st.image("assets/ai_analysis_demo.png", caption="Example AI analysis output")
@@ -136,18 +145,31 @@ if uploaded_files:
             if not job_description.strip():
                 st.warning("Please paste a Job Description first.")
             else:
-                with st.spinner("Analyzing with Gemini..."):
+                with st.spinner(f"Analyzing with {selected_provider}..."):
                     cv_text = st.session_state.cv_texts[selected_cv]
                     resume = parse_resume(cv_text)
-                    result = analyze_cv_against_jd(resume["sections"], job_description)
+                    result = analyze_cv_against_jd(
+                        resume["sections"], job_description, provider=selected_provider,
+                        cv_texts=st.session_state.cv_texts, current_cv_name=selected_cv,
+                    )
                     st.session_state.ai_analysis_result = result
 
         if "ai_analysis_result" in st.session_state:
-            result = st.session_state.ai_analysis_result
+            result = dict(st.session_state.ai_analysis_result)
+            provider_requested = result.pop("_provider_requested", None)
+            provider_used = result.pop("_provider_used", None)
+            fell_back = result.pop("_fell_back", False)
+
+            if fell_back:
+                st.warning(
+                    f"⚠️ {provider_requested} was unavailable — automatically "
+                    f"used {provider_used} instead."
+                )
 
             if "error" in result:
                 st.error(result["error"])
-                st.code(result["raw_response"])
+                if result.get("raw_response"):
+                    st.code(result["raw_response"])
             else:
                 st.metric("AI Match Score", f"{result['match_score']}%")
 
@@ -164,18 +186,24 @@ if uploaded_files:
                     st.write(f"💡 {item}")
 
 st.divider()
-st.header("4. AI-Powered CV Tailoring (Gemini)")
+st.header("4. AI-Powered CV Tailoring")
 
 if uploaded_files:
     tailor_cv_choice = st.selectbox(
         "Choose a CV to tailor", cv_names, key="tailor_select"
     )
 
+    if len(cv_names) > 1:
+        st.caption(
+            "You've uploaded more than one CV — rewrites may cite wording "
+            "or achievements borrowed from your other uploads by filename."
+        )
+
     if is_demo_mode():
         st.info(
-            "This feature calls the Gemini API and is disabled on the public demo "
-            "to avoid exhausting the shared free-tier quota. Clone the repo and add "
-            "your own Gemini API key to try it yourself — see the README for setup steps. "
+            "This feature calls an AI model's API and is disabled on the public demo "
+            "to avoid exhausting shared free-tier quotas. Clone the repo and add "
+            "your own API key to try it yourself — see the README for setup steps. "
             "Below is a real example of this feature's output."
         )
         st.image("assets/ai_tailoring_demo.png", caption="Example AI tailoring output")
@@ -186,18 +214,31 @@ if uploaded_files:
             if not job_description.strip():
                 st.warning("Please paste a Job Description first.")
             else:
-                with st.spinner("Generating tailored suggestions..."):
+                with st.spinner(f"Generating tailored suggestions with {selected_provider}..."):
                     cv_text = st.session_state.cv_texts[tailor_cv_choice]
                     resume = parse_resume(cv_text)
-                    tailoring_result = tailor_cv_to_jd(resume["sections"], job_description)
+                    tailoring_result = tailor_cv_to_jd(
+                        resume["sections"], job_description, provider=selected_provider,
+                        cv_texts=st.session_state.cv_texts, current_cv_name=tailor_cv_choice,
+                    )
                     st.session_state.tailoring_result = tailoring_result
 
         if "tailoring_result" in st.session_state:
-            tailoring_result = st.session_state.tailoring_result
+            tailoring_result = dict(st.session_state.tailoring_result)
+            provider_requested = tailoring_result.pop("_provider_requested", None)
+            provider_used = tailoring_result.pop("_provider_used", None)
+            fell_back = tailoring_result.pop("_fell_back", False)
+
+            if fell_back:
+                st.warning(
+                    f"⚠️ {provider_requested} was unavailable — automatically "
+                    f"used {provider_used} instead."
+                )
 
             if "error" in tailoring_result:
                 st.error(tailoring_result["error"])
-                st.code(tailoring_result["raw_response"])
+                if tailoring_result.get("raw_response"):
+                    st.code(tailoring_result["raw_response"])
             else:
                 for section_name, bullets in tailoring_result.items():
                     st.subheader(section_name)

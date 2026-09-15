@@ -20,7 +20,7 @@ I wanted hands-on, genuine experience working with AI tools and APIs, rather tha
 
 - Python, Streamlit
 - PyMuPDF (PDF text extraction)
-- Google Gemini API (`google-genai`)
+- Google Gemini API (`google-genai`) and Groq (`openai` SDK pointed at Groq's OpenAI-compatible endpoint) — selectable in-app, with automatic fallback between them
 - Standard library (`re`, `collections.Counter`) for keyword extraction — no heavy NLP dependencies
 
 ## Running it locally
@@ -33,8 +33,13 @@ pip install -r requirements.txt
 ```
 
 2. Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com) (no credit card required).
+   Optionally, also get a free Groq API key from [console.groq.com/keys](https://console.groq.com/keys) — the app can use either model, and automatically falls back to the other one if your selected model is rate-limited or temporarily unavailable.
 3. Create a `.env` file in the project root:
-GEMINI_API_KEY=your_key_here
+```
+GEMINI_API_KEY=your_gemini_key_here
+GROQ_API_KEY=your_groq_key_here
+```
+(Groq is optional — the app works with just a Gemini key, and vice versa. Deployed on Streamlit Cloud, add the same keys under the app's Secrets instead of a `.env` file.)
 
 4. Run the app:
 `streamlit run app.py`
