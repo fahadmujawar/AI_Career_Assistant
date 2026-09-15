@@ -7,6 +7,9 @@ import faiss
 from rag.index import MODEL_NAME, build_index
 from rag.ingest import CHUNK_OVERLAP, CHUNK_SIZE, chunk_text, normalize_text
 from rag.retrieve import retrieve
+from utils.ai_analysis import analyze_cv_against_jd
+from utils.resume_parser import parse_resume
+
 
 app = FastAPI()
 
@@ -33,6 +36,11 @@ class SessionQueryRequest(BaseModel):
     jd_text: str
     query: str
     k: int = 5
+
+class AnalyseRequest(BaseModel):
+    cv_text: str
+    jd_text: str
+    provider: str = "Gemini"
 
 
 # ---------- endpoints ----------
@@ -110,3 +118,13 @@ def session_query(request: SessionQueryRequest):
         results.append({**chunk, "score": float(score)})
 
     return {"results": results}
+
+@app.post("/analyse")
+def analyse(request: AnalyseRequest):
+    resume = parse_resume(request.cv_text)
+    result = analyze_cv_against_jd(
+        resume_sections=resume["sections"],
+        job_description=request.jd_text,
+        provider=request.provider,
+    )
+    return result
