@@ -21,7 +21,8 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 COPY api/ ./api/
 COPY rag/ ./rag/
 COPY utils/ ./utils/
-COPY data/faiss.index data/chunk_meta.json ./data/
+COPY knowledge_base/reference/ ./knowledge_base/reference/
+RUN python -m rag.ingest && python -m rag.index
 
 RUN useradd --create-home appuser
 USER appuser

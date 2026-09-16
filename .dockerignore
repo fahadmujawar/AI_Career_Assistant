@@ -17,6 +17,7 @@ cvs/
 prompts/
 pages/
 app.py
-knowledge_base/
+knowledge_base/cvs/
+knowledge_base/jds/
 README.md
 *.md
