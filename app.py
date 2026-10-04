@@ -1,6 +1,5 @@
 from utils.parser import extract_pdf_text
 import streamlit as st
-import os 
 from utils.resume_parser import parse_resume
 from utils.matcher import match_keywords
 from utils.ai_analysis import analyze_cv_against_jd
@@ -58,17 +57,6 @@ if uploaded_files:
              for section_name, lines in resume["sections"].items():
                  st.markdown(f"**{section_name}**")
                  st.text("\n".join(lines))
-
-         # Create folder if it doesn't exist
-         os.makedirs("data/extracted", exist_ok=True)
-
-    # Save extracted text to a file
-         with open(
-             f"data/extracted/{file.name}.txt",
-             "w",
-             encoding="utf-8"
-        ) as f:
-              f.write(pdf_text)
 
          st.caption(f"Characters extracted: {len(pdf_text)}")
 
