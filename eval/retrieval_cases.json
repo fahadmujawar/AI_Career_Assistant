@@ -1,0 +1,6 @@
+[
+  {
+    "query": "REPLACE WITH YOUR QUESTION",
+    "expected_file": "reference/ats_keyword_guide.txt"
+  }
+]
