@@ -2,6 +2,7 @@ import json
 
 from google.genai import errors as genai_errors
 from openai import OpenAIError
+from pydantic import BaseModel, Field, RootModel, ValidationError
 
 from utils.ai_client import GEMINI_MODEL, GROQ_MODEL, get_gemini_client, get_groq_client
 
@@ -12,6 +13,24 @@ except ImportError:
     # faiss/sentence-transformers may not be installed everywhere.
     retrieve = None
     INDEX_PATH = META_PATH = None
+
+
+# Expected shapes of the LLM's JSON replies. Checked before the app uses
+# them, so a missing or mistyped field becomes an error message, not a crash.
+class AnalysisResult(BaseModel):
+    match_score: int = Field(ge=0, le=100)
+    strengths: list[str]
+    gaps: list[str]
+    suggestions: list[str]
+
+
+class TailoredBullet(BaseModel):
+    original: str
+    rewritten: str
+
+
+class TailoringResult(RootModel[dict[str, list[TailoredBullet]]]):
+    pass
 
 
 def get_relevant_context(job_description, k=4):
@@ -201,11 +220,12 @@ def call_llm(provider, prompt, json_mode=False):
     }
 
 
-def _call_llm_json(provider, prompt):
+def _call_llm_json(provider, prompt, schema):
     """Call an LLM expecting a JSON response; always returns a dict.
 
-    On failure (both providers down, or a non-JSON reply), returns an
-    {"error": ...} dict. On success, adds "_provider_requested",
+    On failure (both providers down, a non-JSON reply, or a reply that
+    doesn't match `schema`), returns an {"error": ...} dict. On success,
+    adds "_provider_requested",
     "_provider_used" and "_fell_back" so callers can tell the user when
     a fallback happened -- pop these before treating the dict as the
     plain analysis/tailoring result.
@@ -219,6 +239,23 @@ def _call_llm_json(provider, prompt):
         result = json.loads(text)
     except json.JSONDecodeError:
         return {"error": "Could not parse AI response as JSON.", "raw_response": text}
+
+    # Check the raw reply before adding the _provider keys below.
+    try:
+        validated = schema.model_validate(result)
+    except ValidationError as e:
+        reason = "; ".join(
+            f"{'.'.join(str(p) for p in err['loc']) or 'response'}: {err['msg']}"
+            for err in e.errors()[:3]
+        )
+        return {
+            "error": f"AI response did not have the expected format ({reason}).",
+            "raw_response": text,
+        }
+
+    if isinstance(validated, AnalysisResult):
+        # Store the score as a whole number, e.g. "85" or 85.0 -> 85.
+        result["match_score"] = validated.match_score
 
     result["_provider_requested"] = provider
     result["_provider_used"] = meta["provider_used"]
@@ -235,7 +272,7 @@ def analyze_cv_against_jd(
         resume_sections, job_description, reference_context, other_cv_context
     )
 
-    return _call_llm_json(provider, prompt)
+    return _call_llm_json(provider, prompt, AnalysisResult)
 
 
 def build_tailoring_prompt(
@@ -310,4 +347,4 @@ def tailor_cv_to_jd(
         resume_sections, job_description, reference_context, other_cv_context
     )
 
-    return _call_llm_json(provider, prompt)
+    return _call_llm_json(provider, prompt, TailoringResult)
