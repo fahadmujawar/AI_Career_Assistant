@@ -1,0 +1,14 @@
+[
+  {"query": "how does an applicant tracking system parse a CV into fields", "expected_file": "reference/ats_keyword_guide.txt"},
+  {"query": "why would my two column resume with skill rating bars get mangled when I apply online", "expected_file": "reference/ats_keyword_guide.txt"},
+  {"query": "is it okay to hide extra keywords in white text on my resume", "expected_file": "reference/ats_keyword_guide.txt"},
+  {"query": "difference between precision and recall and when to use the F1 score", "expected_file": "reference/ml_evaluation_metrics.txt"},
+  {"query": "my classifier gets 95 percent accuracy but always predicts the majority class, what is wrong", "expected_file": "reference/ml_evaluation_metrics.txt"},
+  {"query": "why PSNR and SSIM are poor measures for unconditional image generation and what to use instead", "expected_file": "reference/ml_evaluation_metrics.txt"},
+  {"query": "how should documents be chunked and what does overlap do in a RAG pipeline", "expected_file": "reference/rag_engineers_skills.txt"},
+  {"query": "Experience with vector databases such as FAISS, Pinecone or pgvector", "expected_file": "reference/rag_engineers_skills.txt"},
+  {"query": "my chatbot invents answers when the documents do not contain them, how do I stop that", "expected_file": "reference/rag_engineers_skills.txt"},
+  {"query": "how many years of experience do mid level data scientist roles usually ask for", "expected_file": "reference/saudi_tech_role_ladders.txt"},
+  {"query": "does a job title like Specialist or Associate tell me how senior a role is", "expected_file": "reference/saudi_tech_role_ladders.txt"},
+  {"query": "Saudization quota rules for companies hiring expatriate engineers", "expected_file": "reference/saudi_tech_role_ladders.txt"}
+]

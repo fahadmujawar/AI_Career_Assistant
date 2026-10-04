@@ -46,7 +46,14 @@ GROQ_API_KEY=your_groq_key_here
 ```
 (Groq is optional — the app works with just a Gemini key, and vice versa. Deployed on Streamlit Cloud, add the same keys under the app's Secrets instead of a `.env` file.)
 
-4. Run the app:
+4. Build the search index (run these from the project root, the folder that contains `app.py`):
+```
+python -m rag.ingest
+python -m rag.index
+```
+Without this step the app still runs, but quietly without RAG grounding. The first run downloads the embedding model (about 90 MB). Rerun both commands after adding or editing files in `knowledge_base/`.
+
+5. Run the app:
 `streamlit run app.py`
 
 ## API backend (experimental)
@@ -66,9 +73,50 @@ venv\Scripts\uvicorn.exe api.main:app --reload
 ```
 `fastapi` is included in `requirements.txt`.
 
+## Testing and Evaluation
+
+### Running the tests
+```
+pip install pytest
+python -m pytest
+```
+The tests need no API keys.
+
+They cover the keyword matcher, document chunking, the CV parser, the check on the AI's JSON reply, switching to the other model when one fails, and the RAG page's with and without RAG prompts. Locally: 30 passed and 3 expected failures. Three known bugs are kept as xfail tests:
+- a phone number keeps the line break after it
+- a heading with a colon, such as "SKILLS:", is not detected
+- keyword pairs join across the end of a sentence
+
+GitHub Actions runs the tests on every push and pull request with Python 3.11 (`.github/workflows/tests.yml`). It installs only what the tests need, so the RAG page tests are skipped there.
+
+### Retrieval
+On 12 labelled questions, the expected reference file was the first result 12/12 times (hit@1) and in the top 4 results 12/12 times (hit@4). There are only 4 reference files, on clearly different topics, so this shows the pipeline works, not that it scales.
+
+### Match score consistency
+10 runs on the same CV and JD were planned, 5 per model. Gemini returned 503 on every call, so Groq answered all 10. 9 gave a valid score (70 to 83, average about 77.7); 1 reply failed the Pydantic check. There is no Gemini comparison yet.
+
+### What the real run showed
+- The fallback switched models correctly.
+- The Pydantic check caught a Groq reply missing two fields.
+- Tailoring on Groq failed with a 400 JSON error.
+
+Full results are in `eval/results.md`.
+
+### Evaluation scripts
+- `python eval/eval_retrieval.py` runs the retrieval questions in `eval/retrieval_cases.json` (needs the search index built, see "Running it locally").
+- `python eval/eval_scores.py --dry-run` shows the plan without calling any API. A real run, without `--dry-run`, uses about 12 to 20 API calls.
+
+### Next steps
+- Test retrieval on more documents, including ones with overlapping topics.
+- Report MRR (mean reciprocal rank) alongside hit@1 and hit@4.
+- Average several runs for each match score.
+
 ## Known limitations
 
-- The keyword matcher does exact string matching after basic cleaning — it doesn't handle word variants (e.g. "client" vs "clients"). This is intentionally deferred, since the Gemini-based analysis naturally handles this kind of semantic matching.
+- The keyword matcher matches whole words, but not word variants such as plurals ("client" vs "clients"). This is intentionally deferred, since the AI analysis handles this kind of matching.
+- The API has no authentication.
+- AI match scores vary between runs: 70 to 83 on the same input.
+- Uploaded CVs are kept only in memory and are never saved.
 - Section-header detection relies on an alias list built from CV formats I've personally tested against — it may not recognize header wording it hasn't seen before.
 
 ## What I'd build next
