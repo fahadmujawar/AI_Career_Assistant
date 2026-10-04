@@ -169,35 +169,48 @@ else:
         key="rag_analyze_choice",
     )
     resume_sections = parse_resume(cv_texts[analyze_choice])["sections"]
-    other_cv_context = "\n\n".join(f"[{r['source']}]\n{r['text']}" for r in results)
+    # Only chunks from OTHER CVs count as retrieved context -- the CV being
+    # analyzed is already in the prompt, and the prompt labels these "OTHER CVs".
+    other_results = [r for r in results if r["source"] != analyze_choice]
+    other_cv_context = "\n\n".join(
+        f"[{r['source']}]\n{r['text']}" for r in other_results
+    )
 
     st.caption(
-        "Notice the retrieved chunks can come from a *different* uploaded "
-        "CV than the one being analyzed — RAG surfaces the best-matching "
-        "material across everything you've uploaded, and the prompt asks "
-        "the model to cite the source filename when it uses it."
+        "Chunks retrieved from the CV being analyzed are left out, since that "
+        "CV is already in the prompt — only chunks from your *other* uploaded "
+        "CVs are added, and the prompt asks the model to cite the source "
+        "filename when it uses one. "
+        f"{len(results) - len(other_results)} of the {len(results)} retrieved "
+        "chunks came from this CV and were left out."
     )
 
-    tab_without, tab_with = st.tabs(
-        ["Prompt WITHOUT RAG", "Prompt WITH RAG (what actually gets sent)"]
-    )
-    with tab_without:
-        st.code(
-            build_analysis_prompt(resume_sections, demo_query),
-            language="text",
+    if not other_cv_context:
+        st.info(
+            "No retrieved chunks come from a different CV. Increase k in step 2, "
+            "or pick another CV here."
         )
-    with tab_with:
-        st.code(
-            build_analysis_prompt(
-                resume_sections, demo_query, other_cv_context=other_cv_context
-            ),
-            language="text",
+    else:
+        tab_without, tab_with = st.tabs(
+            ["Prompt WITHOUT RAG", "Prompt WITH RAG (what actually gets sent)"]
         )
-        st.caption(
-            "The OTHER CVs block above is exactly what step 2's retrieval "
-            "added — this is the real build_analysis_prompt() function "
-            "from utils/ai_analysis.py, not a re-implementation."
-        )
+        with tab_without:
+            st.code(
+                build_analysis_prompt(resume_sections, demo_query),
+                language="text",
+            )
+        with tab_with:
+            st.code(
+                build_analysis_prompt(
+                    resume_sections, demo_query, other_cv_context=other_cv_context
+                ),
+                language="text",
+            )
+            st.caption(
+                "The OTHER CVs block above is exactly what step 2's retrieval "
+                "added — this is the real build_analysis_prompt() function "
+                "from utils/ai_analysis.py, not a re-implementation."
+            )
 
 st.divider()
 
@@ -214,11 +227,24 @@ if is_demo_mode():
     )
 elif not results or not cv_texts:
     st.info("Complete steps 1-3 above first.")
+elif not other_cv_context:
+    st.info(
+        "No retrieved chunks come from a different CV. Increase k in step 2, "
+        "or pick another CV here."
+    )
 else:
     if st.button("Ask AI — with vs. without RAG context"):
+        # Both prompts contain the same CV (sections without the HEADER, as in
+        # build_analysis_prompt); only the RAG prompt adds the retrieved chunks.
+        cv_body = "\n\n".join(
+            f"{section}:\n" + "\n".join(lines)
+            for section, lines in resume_sections.items()
+            if section != "HEADER"
+        )
         base_prompt = (
             "In 2-3 sentences, advise how this candidate should position "
-            f"themselves for this job description:\n\n{demo_query}"
+            "themselves for this job description.\n\n"
+            f"CV:\n{cv_body}\n\nJOB DESCRIPTION:\n{demo_query}"
         )
         rag_prompt = (
             f"{base_prompt}\n\nGround your advice in this content from their "
@@ -258,6 +284,6 @@ else:
                 st.write(text)
 
         st.caption(
-            "Same question, same model — the only difference is whether the "
-            "retrieved reference material was in the prompt."
+            "Same question, same CV, same model — the only difference is "
+            "whether the chunks retrieved from your other CVs were in the prompt."
         )
