@@ -1,0 +1,25 @@
+name: tests
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Light install on purpose: requirements.txt pulls full PyTorch (several GB).
+      # The tests need no FAISS or embedding model; tests/test_rag_page.py skips itself.
+      - name: Install test dependencies
+        run: pip install pytest==9.1.1 pydantic==2.13.4 google-genai==2.16.0 openai==2.51.0 python-dotenv==1.2.2
+
+      - name: Run tests
+        run: python -m pytest -v
