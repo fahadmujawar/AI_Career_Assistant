@@ -11,6 +11,9 @@ STOPWORDS = {
     "across", "per", "etc", "including", "e.g", "i.e"
 }
 
+# Short words that are real keywords despite being 2 letters or fewer.
+SHORT_KEYWORDS = {"ai", "ml", "bi"}
+
 
 def clean_and_tokenize(text):
     text = text.lower()
@@ -20,12 +23,13 @@ def clean_and_tokenize(text):
 
 
 def extract_ngrams(words):
-    unigrams = [w for w in words if w not in STOPWORDS and len(w) > 2]
+    unigrams = [w for w in words
+                if w not in STOPWORDS and (len(w) > 2 or w in SHORT_KEYWORDS)]
 
     bigrams = []
     for i in range(len(words) - 1):
         w1, w2 = words[i], words[i + 1]
-        if w1 not in STOPWORDS and w2 not in STOPWORDS:
+        if w1 not in STOPWORDS and w2 not in STOPWORDS and w1 != w2:
             bigrams.append(f"{w1} {w2}")
 
     return unigrams, bigrams
@@ -56,35 +60,18 @@ def get_important_keywords(jd_text, top_n=25):
 # handling. Adding stemming/lemmatization now would fix a problem that
 # mostly disappears once the LLM-based comparison is built.
 def match_keywords(cv_text, jd_text):
-    cv_normalized = " ".join(clean_and_tokenize(cv_text))
+    cv_words = clean_and_tokenize(cv_text)
+    # Whole-word matching: a keyword must equal a CV word (or, for two-word
+    # phrases, a pair of adjacent CV words), so "nosql" does not match "sql".
+    cv_terms = set(cv_words)
+    cv_terms.update(f"{w1} {w2}" for w1, w2 in zip(cv_words, cv_words[1:]))
     keywords = get_important_keywords(jd_text)
 
     matched = []
     missing = []
 
     for keyword in keywords:
-        if keyword in cv_normalized:
-            matched.append(keyword)
-        else:
-            missing.append(keyword)
-
-    total = len(keywords)
-    match_score = round(len(matched) / total * 100, 1) if total > 0 else 0.0
-
-    return {
-        "matched": matched,
-        "missing": missing,
-        "score": match_score
-    }
-def match_keywords(cv_text, jd_text):
-    cv_normalized = " ".join(clean_and_tokenize(cv_text))
-    keywords = get_important_keywords(jd_text)
-
-    matched = []
-    missing = []
-
-    for keyword in keywords:
-        if keyword in cv_normalized:
+        if keyword in cv_terms:
             matched.append(keyword)
         else:
             missing.append(keyword)
