@@ -46,7 +46,14 @@ GROQ_API_KEY=your_groq_key_here
 ```
 (Groq is optional — the app works with just a Gemini key, and vice versa. Deployed on Streamlit Cloud, add the same keys under the app's Secrets instead of a `.env` file.)
 
-4. Run the app:
+4. Build the search index (run these from the project root, the folder that contains `app.py`):
+```
+python -m rag.ingest
+python -m rag.index
+```
+Without this step the app still runs, but quietly without RAG grounding. The first run downloads the embedding model (about 90 MB). Rerun both commands after adding or editing files in `knowledge_base/`.
+
+5. Run the app:
 `streamlit run app.py`
 
 ## API backend (experimental)
