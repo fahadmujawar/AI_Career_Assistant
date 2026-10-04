@@ -1,3 +1,5 @@
+import pytest
+
 from utils.matcher import get_important_keywords, match_keywords
 
 
@@ -36,12 +38,16 @@ def test_two_word_phrase_and_whole_word_match():
 
 
 def test_exact_score():
-    # Punctuation is removed before phrases are built, so the keywords are:
-    # python, docker, kubernetes, python docker, docker kubernetes.
-    # The CV has 2 of the 5 -> 40.0.
-    jd = "Python Docker. Kubernetes."
-    result = match_keywords("Python developer. Docker user.", jd)
+    # Keywords: python, sql, docker, python sql, sql docker.
+    # The CV has python, sql and "python sql" -> 3 of 5 -> 60.0.
+    jd = "Python SQL Docker"
+    result = match_keywords("I use Python SQL daily", jd)
 
-    assert sorted(result["matched"]) == ["docker", "python"]
-    assert sorted(result["missing"]) == ["docker kubernetes", "kubernetes", "python docker"]
-    assert result["score"] == 40.0
+    assert sorted(result["matched"]) == ["python", "python sql", "sql"]
+    assert sorted(result["missing"]) == ["docker", "sql docker"]
+    assert result["score"] == 60.0
+
+
+@pytest.mark.xfail(strict=True, reason="word pairs join across sentence ends")
+def test_word_pairs_do_not_cross_sentence_ends():
+    assert "docker kubernetes" not in get_important_keywords("Docker. Kubernetes")
