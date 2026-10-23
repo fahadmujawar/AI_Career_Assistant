@@ -45,7 +45,7 @@ openai==2.51.0
 packaging==26.2
 pandas==3.0.5
 pdfminer.six==20260107
-pillow==12.3.0
+pillow==13.0.0
 protobuf==7.35.1
 pyarrow==24.0.0
 pyasn1==0.6.4
